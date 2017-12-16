@@ -1,11 +1,12 @@
 /build
 /ext
+/phonegap/build
+/phonegap/www
+/phonegap/node_modules
+/phonegap/plugins
+/phonegap/platforms
 bootstrap.*
 classic.json*
 modern.json*
 .sencha
 *.log
-/phonegap/build
-/phonegap/www
-/phonegap/node_modules
-/phonegap/plugins
