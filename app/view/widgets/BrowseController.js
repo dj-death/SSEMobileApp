@@ -41,9 +41,11 @@ Ext.define('App.view.widgets.BrowseController', {
             return;
         }
 
-        var item = filters.first();
+        console.log(filters);
+
+        /*var item = filters.first();
         
-        alert(item.getValue());
+        alert(item.getValue());*/
 
         this.onFilterTap();
     },

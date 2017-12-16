@@ -14,26 +14,9 @@ Ext.define('App.view.visit.Show', {
             items: {
                 title: {
                     tpl: [
-                        '<div class="icon x-fa fa-eye"></div>',
                         '<div class="name">Visite de <b>{product.name}</b></div>',
                         '<div class="desc">Faite par <b>{assignee.fullname}</b><div>'
                     ]
-                },
-
-                printFiche: {
-                    xtype: 'button',
-                    handler: 'saveAsDocx',
-                    iconCls: 'x-fa fa-file-word-o',
-                    cls: 'no-print',
-                    ui: 'flat',
-                    weigth: 2,
-                    text: 'Exporter Fiche',                    
-        
-                    platformConfig: {
-                        phone: {
-                            hidden: true
-                        }
-                    }
                 }
 
             }
@@ -45,7 +28,7 @@ Ext.define('App.view.visit.Show', {
                     items: {
                         details: {
                             xtype: 'visitshowdetails'
-                        },
+                        }/*,
 
                         conclusions: {
                             xtype: 'visitshowconclusions'
@@ -57,7 +40,7 @@ Ext.define('App.view.visit.Show', {
 
                         recommandations: {
                             xtype: 'visitshowrecommandations'      
-                        }
+                        }*/
                     }
                 }
             }

@@ -12,7 +12,7 @@ Ext.define('App.view.project.ShowModel', {
             data: []
         },
         
-        finances: {
+        /*finances: {
             fields: ['id', 'partner', 'contribution', 'percent'],
             date: []
         },
@@ -20,7 +20,7 @@ Ext.define('App.view.project.ShowModel', {
         engagements: {
             fields: ['id', 'phase', 'amount'],
             date: []
-        },
+        },*/
 
         history: {
             type: 'actions',

@@ -18,6 +18,8 @@ Ext.define('App.view.phone.project.Browse', {
         }
     },
 
+    title: "Liste des projets INDH",
+
     bind: {
         title: '{count} Projets affichés',
     },
@@ -26,8 +28,6 @@ Ext.define('App.view.phone.project.Browse', {
         xtype: 'projectbrowsetoolbar'
     },
 
-
-    controller: 'phone-projectbrowse',
 
     items: [{
         xtype: 'list',

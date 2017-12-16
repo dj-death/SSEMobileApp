@@ -4,17 +4,15 @@ Ext.define('App.view.project.ShowController', {
 
     onRecordChange: function(view, record) {
         var vm = this.getViewModel(),
-            finances = vm.getStore('finances'),
-            engagements = vm.getStore('engagements'),
+            /*finances = vm.getStore('finances'),
+            engagements = vm.getStore('engagements'),*/
             images = vm.getStore('images'),
             history = vm.getStore('history'),
             finData, sums;
 
-        window.vm = vm;
-
         if (record) {            
             sums = record.get('montant_global');
-            finData = [
+            /*finData = [
                 {id : 0, partner: 'INDH', contribution: record.get('part_INDH'), percent: Ext.util.Format.round(record.get('part_INDH') / sums, 4)},
                 {id : 1, partner: record.get('porteur'), contribution: record.get('participation_partenaires'), percent: Ext.util.Format.round(record.get('participation_partenaires') / sums, 4)},
                 {id : 2, partner: 'Bénéficiaires', contribution: record.get('contribution_beneficiaires'), percent: Ext.util.Format.round(record.get('contribution_beneficiaires') / sums, 4)}
@@ -25,7 +23,7 @@ Ext.define('App.view.project.ShowController', {
                 {id: 0, phase: 'Programmation', amount: record.get('part_INDH')},
                 {id: 1, phase: 'Engagement', amount: record.get('montant_engage')},
                 {id: 2, phase: 'Emission', amount: record.get('montant_emis')}
-            ]);
+            ]);*/
 
             var imagesArr = record.get('images'),
                 arr = [];
@@ -50,9 +48,10 @@ Ext.define('App.view.project.ShowController', {
 
         } else {
             //projects.removeAll();
+
             history.removeAll();
-            finances.removeAll();
-            engagements.removeAll();
+            /*finances.removeAll();
+            engagements.removeAll();*/
             images.removeAll();
         }
 
@@ -74,7 +73,7 @@ Ext.define('App.view.project.ShowController', {
         //this.redirectTo('history/project/' + this.getRecord().getId());
     },
 
-    onFinancesChartTooltipRender: function (tooltip, record, item) {
+    /*onFinancesChartTooltipRender: function (tooltip, record, item) {
         var text = record.get('partner') + ': ' + Ext.util.Format.dhMoney(record.get('contribution'));
         text += ' ( ' + Ext.util.Format.percent(record.get("percent")) + ' )';
 
@@ -84,7 +83,7 @@ Ext.define('App.view.project.ShowController', {
     onEngagementChartTooltipRender: function (tooltip, record, item) {
         var text = record.get('phase') + ': ' + Ext.util.Format.dhMoney(record.get('amount'));
         tooltip.setHtml(text);
-    },
+    },*/
 
 
     onPictureTap: function(view, location) {

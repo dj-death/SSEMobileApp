@@ -18,6 +18,8 @@ Ext.define('App.view.phone.product.Browse', {
         }
     },
 
+    title: "Liste des produits INDH",
+
     tbar: {
         xtype: 'productbrowsetoolbar'
     },

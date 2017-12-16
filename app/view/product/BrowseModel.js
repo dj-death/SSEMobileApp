@@ -19,6 +19,7 @@ Ext.define('App.view.product.BrowseModel', {
 
             listeners: {
                 refresh: 'onStoreRefresh',
+                filterchange: 'onStoreFiltered',
                 buffer: 100
             }
         },

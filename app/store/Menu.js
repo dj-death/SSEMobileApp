@@ -10,13 +10,13 @@ Ext.define('App.store.Menu', {
             text: 'Accueil',
             icon: 'home',
             role: 3
-        }, {
+        }/*, {
             id: 'stats',
             xtype: 'statshome',
             text: 'Statistiques',
             icon: 'line-chart',
             role: 3
-        }, {
+        }*/, {
             id: 'projects',
             xtype: 'projectbrowse',
             text: 'Projets',
@@ -34,7 +34,7 @@ Ext.define('App.store.Menu', {
             text: 'Partenaires',
             icon: 'users',
             role: 2
-        }, {
+        }/*, {
             id: 'risks',
             xtype: 'riskhome',
             text: 'Cartographie',
@@ -46,13 +46,13 @@ Ext.define('App.store.Menu', {
             text: 'Planification',
             icon: 'briefcase',
             role: 1
-        }, {
+        }*/, {
             id: 'visits',
             xtype: 'visitbrowse',
             text: 'Visites',
             icon: 'eye',
             role: 1
-        }, {
+        }/*, {
             id: 'annexes',
             xtype: 'annexebrowse',
             text: 'Annexes',
@@ -64,7 +64,7 @@ Ext.define('App.store.Menu', {
             text: 'Recommandation',
             icon: 'list-ol',
             role: 1
-        }, {
+        }*/, {
             id: 'history',
             xtype: 'historybrowse',
             text: 'Historique',
