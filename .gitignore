@@ -4,3 +4,8 @@ bootstrap.*
 classic.json*
 modern.json*
 .sencha
+*.log
+/phonegap/build
+/phonegap/www
+/phonegap/node_modules
+/phonegap/plugins
