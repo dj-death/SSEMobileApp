@@ -1,0 +1,14 @@
+Ext.define('App.model.Evaluation', {
+    extend: 'App.model.Base',
+
+
+    fields: [
+        { name: 'visit_id', reference: 'Visit' }
+    ],
+
+    proxy: {
+        api: {
+            prefix: 'Server.evaluations'
+        }
+    }
+});

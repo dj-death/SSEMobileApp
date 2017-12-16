@@ -1,0 +1,10 @@
+Ext.define('App.store.Evaluations', {
+    extend: 'Ext.data.Store',
+    alias: 'store.evaluations',
+
+    model: 'App.model.Evaluation',
+
+    remoteFilter: true,
+    remoteSort: true,
+    remoteGroup: false
+});

@@ -1,0 +1,18 @@
+.project-history {
+    .block-section {
+        min-width: 16%;
+
+        .item {
+            padding: 0 2px 12px 6px;
+            min-height: 35px;
+        }
+
+        .value {
+            font-size: 14px;
+        }
+
+        .value:before {
+            content: ': '
+        }
+    }
+}

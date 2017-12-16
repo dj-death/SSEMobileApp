@@ -1,0 +1,130 @@
+.productbrowse, .projectbrowse {
+    .x-list {
+        .date,
+        .time {
+            text-align: right;
+        }
+
+        .time {
+            font-weight: bold;
+        }
+    }
+
+    .statut-cell {
+
+        .statut-icon:before {
+            font-family: FontAwesome;
+            font-size: 16px;
+            display: inline-block;
+            padding-right: 3px;
+            vertical-align: middle;
+        }
+
+        .non-demarre:before {
+            color: #AE0000 !important;
+            content: "\f04b";
+        }
+
+        .etude:before {
+            color: #00ACF2 !important;
+            content: "\f02d";
+        }
+
+        .lancement:before {
+            color: #00ACF2;
+            content: '\f072'
+        }
+
+        .execution:before {
+            color: #004E6E;
+            content: '\f0e3'
+        }
+
+        .retard:before {
+            color: #FBA400;
+            content: '\f0e3';
+        }
+
+        .acheve:before {
+            color: #FBA400;
+            content: "\f071";
+        }
+
+        .operationnel:before {
+            color: #2f8f90;
+            content: "\f085";
+        }
+
+        .difficulte:before {
+            color: #FB4B00;
+            content: "\f193";
+        }
+
+        .arret:before {
+            color: #AE0000;
+            content: "\f11d";
+        }
+
+        .annule:before {
+            color: #444;
+            content: "\f00d";
+        }
+
+        .resilie:before {
+            color: #444;
+            content: "\f0c4";
+        }
+
+    }
+
+
+    .intitule-cell {
+
+        .non-demarre a {
+            color: #AE0000 !important;
+            text-decoration: underline !important;
+        }
+        .etude a {
+            color: #00ACF2 !important;
+            text-decoration: underline !important;
+        }
+
+        .lancement a {
+            color: #00ACF2 !important;
+        }
+
+        .execution a {
+            color: #004E6E !important;
+        }
+
+        .retard a {
+            color: #FBA400 !important;
+            text-decoration: underline !important;
+        }
+
+        .acheve a {
+            color: #FBA400 !important;
+        }
+
+        .operationnel {
+            color: #0d1114 !important;
+        }
+
+        .difficulte a {
+            color: #FB4B00 !important;
+        }
+
+        .arret a {
+            color: #AE0000 !important;
+            text-decoration: underline !important;
+        }
+
+
+        .annule a, .resilie a {
+            color: #444 !important;
+            text-decoration: line-through !important;
+        }
+
+        
+    }
+}

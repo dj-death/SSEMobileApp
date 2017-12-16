@@ -1,0 +1,18 @@
+.x-gridcolumn {
+
+    .x-header-el {
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+    }
+
+    .x-title-el {
+        @include single-text-shadow();
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .x-trigger-el {
+        cursor: pointer;
+    }
+}

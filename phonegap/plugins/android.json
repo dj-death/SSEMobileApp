@@ -1,0 +1,40 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-battery-status": {
+      "PACKAGE_NAME": "com.DIDI.TAQYEM"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.DIDI.TAQYEM"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.DIDI.TAQYEM"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.DIDI.TAQYEM"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.DIDI.TAQYEM"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.DIDI.TAQYEM"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.DIDI.TAQYEM"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "com.DIDI.TAQYEM"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.DIDI.TAQYEM"
+    }
+  }
+}

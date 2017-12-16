@@ -1,0 +1,39 @@
+.wizard-screen {
+    align-items: center;
+
+    > .x-body-el {
+        max-width: $form-max-width;
+        width: 100%;
+    }
+
+    .thumbnail:hover {  
+        opacity: 0.55;
+    }
+
+    .thumbnail:hover:before {  
+        content: " ";
+        display: block;
+        position: absolute;
+        top: -10px;
+        left: 0;
+        height: calc(100% + 10px);
+        width: 100%;
+        border: 2px dotted #d63e08;
+        border-radius: 5px;
+    }
+
+    .thumbnail:hover:after {  
+        content: "\f00d" " Supprimer ";
+        display: block;
+        font-size: 16px;
+        font-style: normal;
+        font-family: FontAwesome;
+        color: #d63e08;
+
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
