@@ -61,11 +61,11 @@ Ext.define('App.view.phone.project.Browse', {
 
         itemTpl: [
             '<div class="history-visual statut-cell">',
-                '<span class="statut-icon {statutcls:pick("non-demarre", "etude", "lancement","execution", "retard", "acheve", "operationnel", "difficulte", "arret", "resilie", "annule")}"></span>',
+                '<span class="statut-icon {statutCls:pick("non-demarre", "etude", "lancement","execution", "retard", "acheve", "operationnel", "difficulte", "arret", "resilie", "annule")}"></span>',
             '</div>',
 
             '<div class="item-details intitule-cell">',
-                '<div class="item-title {statutcls:pick("non-demarre", "etude", "lancement","execution", "retard", "acheve", "operationnel", "difficulte", "arret", "resilie", "annule")}">{intitule}</div>',
+                '<div class="item-title {statutCls:pick("non-demarre", "etude", "lancement","execution", "retard", "acheve", "operationnel", "difficulte", "arret", "resilie", "annule")}">{intitule}</div>',
                 '<div class="item-caption">{commune}, {quartier_douar}</div>',
             '</div>',
 

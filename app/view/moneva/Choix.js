@@ -1,6 +1,15 @@
 Ext.define('App.view.moneva.Choix', {
-    extend: 'Ext.Container',
+    extend: 'Ext.Panel',
     xtype: 'choixchecklist',
+
+    requires: [
+        'Ext.panel.Collapser'
+    ],
+
+    collapsible: {
+        direction: 'top',
+        dynamic: true
+    },
 
     defaults: {
         xtype: 'checkbox',

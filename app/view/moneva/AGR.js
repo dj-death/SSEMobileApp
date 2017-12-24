@@ -1,6 +1,17 @@
 Ext.define('App.view.moneva.AGR', {
-    extend: 'Ext.Container',
+    extend: 'Ext.Panel',
     xtype: 'agrchecklist',
+
+    requires: [
+        'Ext.panel.Collapser'
+    ],
+
+    collapsible: {
+        direction: 'top',
+        dynamic: true
+    },
+
+    
 
     defaults: {
         xtype: 'checkbox',
@@ -8,6 +19,8 @@ Ext.define('App.view.moneva.AGR', {
         labelTextAlign: 'left',
         padding: '0 0 0 80'
     },
+
+    
 
     items: [{
         xtype: 'textfield',

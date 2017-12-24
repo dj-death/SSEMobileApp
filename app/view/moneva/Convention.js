@@ -1,6 +1,21 @@
 Ext.define('App.view.moneva.Convention', {
-    extend: 'Ext.Container',
+    extend: 'Ext.Panel',
     xtype: 'conventionchecklist',
+
+    requires: [
+        'Ext.panel.Collapser'
+    ],
+
+    collapsible: {
+        direction: 'top',
+        dynamic: true
+    },
+
+    collapsible: {
+        direction: 'top',
+        dynamic: true
+    },
+
 
     defaults: {
         xtype: 'checkbox',

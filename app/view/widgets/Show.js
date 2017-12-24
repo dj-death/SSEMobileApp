@@ -23,14 +23,7 @@ Ext.define('App.view.widgets.Show', {
         phone: {
             header: {
                 items: {
-                    back: {
-                        xtype: 'button',
-                        iconCls: 'x-fa fa-chevron-left',
-                        text: 'Précedant',
-                        handler: 'onBackTap',
-                        weight: 0
-                    },
-
+                    
                     edit: {
                         xtype: 'button',
                         iconCls: 'x-fa fa-pencil',

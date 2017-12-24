@@ -8,11 +8,11 @@ Ext.define('App.view.visit.WizardModel', {
     },
     
     stores: {
-        missions: {
+        /*missions: {
             type: 'filters',
             service: 'missions',
             field: 'mission.id',
-            label: 'mission.name',
+            label: 'mission.id',
 
             sorters: [{
                 property: 'createdAt',
@@ -25,7 +25,7 @@ Ext.define('App.view.visit.WizardModel', {
             service: 'people',
             field: 'person.id',
             label: 'lastname'
-        },
+        },*/
 
         /*products: {
             type: 'filters',
@@ -33,6 +33,23 @@ Ext.define('App.view.visit.WizardModel', {
             field: 'product.id',
             label: 'product.name'
         },*/
+
+        missions: {
+            type: 'missions',
+            autoLoad: true,
+            pageSize: 0/*,
+
+            sorters: [{
+                property: 'createdAt',
+                direction: 'DESC'
+            }]*/
+        },
+
+        assignees: {
+            type: 'people',
+            autoLoad: true,
+            pageSize: 0
+        },
 
         products: {
             type: 'products',
@@ -52,7 +69,7 @@ Ext.define('App.view.visit.WizardModel', {
             }
         },
 
-        visitRisks: {
+        /*visitRisks: {
             fields: ['id', 'name', 'url'],
             pageSize: 0,
             data: []
@@ -66,7 +83,7 @@ Ext.define('App.view.visit.WizardModel', {
             listeners: {
                 load: 'onRisksLoad'
             }
-        },
+        },*/
 
         etats: {
             type: 'etats',

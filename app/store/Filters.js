@@ -1,5 +1,5 @@
 Ext.define('App.store.Filters', {
-    extend: 'App.store.LocalCache',
+    extend: 'Ext.data.Store',
     alias: 'store.filters',
 
     config: {
@@ -19,25 +19,25 @@ Ext.define('App.store.Filters', {
         direction: 'ASC'
     },
 
+    proxy: {
+        type: 'direct',
+        reader: {
+            type: 'json',
+            rootProperty: 'data',
+            messageProperty: 'message'
+        }
+    },
+
     updateService: function(service) {
-        var proxy = this.getRemoteProxy(),
-            api = proxy.api || {};
+        var proxy = this.getProxy(),
+            api = proxy.getApi() || {};
         api.read = 'Server.' + service + '.filters';
-        proxy.api = api;
-
-
-        this.expireField = App.app.getName() + "-" + service + '-expireDate';
-        this.createdAtField = App.app.getName() + "-" + service + '-createdAt';
-
-        this.setLocalStorageProxy({
-            type: 'localstorage',
-            id: App.app.getName() + "-" + service + "-cache"
-        });
+        proxy.setApi(api);
     },
 
     updateField: function(field) {
-        var proxy = this.getRemoteProxy(),
-            params = proxy.extraParams;
+        var proxy = this.getProxy(),
+            params = proxy.getExtraParams();
 
         if (Ext.isEmpty(field)) {
             delete params.field;
@@ -47,8 +47,8 @@ Ext.define('App.store.Filters', {
     },
 
     updateLabel: function(label) {
-        var proxy = this.getRemoteProxy(),
-            params = proxy.extraParams;
+        var proxy = this.getProxy(),
+            params = proxy.getExtraParams();
 
         if (Ext.isEmpty(label)) {
             delete params.label;

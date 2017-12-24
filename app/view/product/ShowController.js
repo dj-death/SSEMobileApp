@@ -122,13 +122,23 @@ Ext.define('App.view.product.ShowController', {
                 closable: true,
                 dismissHandler: true,
 
-                layout: 'fit',
+                layout: {
+                    type: 'vbox',
+                    align: 'stretch',
+                    pack: 'start'
+                },
 
                 items: [{
+                    xtype: 'component',
+                    flex: 1,
+                    html: '<div class="name">' +  record.get('title') + '</div>'
+                }, {
                     xtype: 'image',
+                    flex: 6,
                     minHeight: 300,
                     width: '100%',
-                    src: '/uploads/' + record.get('src')
+                    //src: 'http://192.168.1.4/uploads/' + record.get('src')
+                    src: 'http://rest-taqyem.1d35.starter-us-east-1.openshiftapps.com/uploads/' + record.get('src')
                 }]
             });
 
@@ -176,6 +186,8 @@ Ext.define('App.view.product.ShowController', {
 
     onGeoLocateTap: function() {
         var me = this,
+            vm = this.getViewModel(),
+            markers = vm.getStore('markers'),
             rec = this.getRecord();
 
         // This method accepts a Position object, which contains the
@@ -189,6 +201,9 @@ Ext.define('App.view.product.ShowController', {
                 "longitude": coords.longitude
             });
 
+            markers.removeAll();
+            markers.loadRecords(rec);
+
             me.saveChanges('Géo-localisation');
 
             
@@ -201,53 +216,89 @@ Ext.define('App.view.product.ShowController', {
                   'message: ' + error.message + '\n');
         }
         
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        var location = rec.get('location');
+        
+        if (location && location.latitude) {
+
+            navigator.notification.confirm(
+                'Voulez-vous modifier les coordonnées déjà enregistrées ?',  // message
+                function (buttonId) {
+                    if (buttonId != 1) {
+                        return false;
+                    }
+
+                    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+                },              // callback to invoke with index of button pressed
+                'Coordonnées spatiales',            // title
+                ['Oui' ,'Non']          // buttonLabels
+            );
+
+        } else {
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        }
     },
 
     takePicture: function () {
-        var vm = this.getViewModel(),
+        var me = this,
+            vm = this.getViewModel(),
             record = this.getRecord(),
             images = vm.getStore('images');
 
-        function onSuccess (image_uri) {
-            var input = document.createElement('input');
-            var formData = new FormData();
+        function onSuccess (imageURI) {
+            var options = new FileUploadOptions();
 
-            input.type = "file";
-            input.multiple = true;
-            input.src = image_uri;
-                    
-            formData.append("picture", input.files[0]);
+            options.fileKey="file";
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+ 
+            var params = new Object();
 
-            var xhr = new XMLHttpRequest();
-            xhr.onload = function(oEvent) {
-                if (xhr.status == 200) {
-                    var resp = Ext.decode(this.responseText, true);
-                    var fileName = resp.fileName;
-                    var imgsArr = [];
-                    
-                    images.add({
-                        id: images.count(),
-                        title: "title",
-                        src: fileName
+            params.value1 = "test";
+            params.value2 = "param";
+ 
+            options.params = params;
+            options.chunkedMode = false;
+
+            navigator.notification.activityStart("", "Envoi en cours");
+ 
+            var ft = new FileTransfer();
+            ft.upload(imageURI, /*"http://192.168.1.4/upload/"*/ "http://rest-taqyem.1d35.starter-us-east-1.openshiftapps.com/upload/", function (resp) {
+                navigator.notification.activityStop();
+
+                var respObj = Ext.decode(resp.response, true);
+                var fileName = respObj.fileName;
+                var imgsArr = [];
+
+                var title = record.get('intitule') || record.get('name');
+                title += ",  ";
+                title += Ext.util.Format.date(new Date(), "d/m/Y");
+
+                images.add({
+                    id: images.count(),
+                    title: title,
+                    src: fileName
+                });
+
+                images.each(function (img) {
+                    imgsArr.push({
+                        title: img.get('title'),
+                        src: img.get('src')
                     });
+                });
 
-                    images.each(function (img) {
-                        imgsArr.push({
-                            title: img.get('title'),
-                            src: img.get('src')
-                        });
-                    });
-
-                } else {
-                    App.ux.Signals.showWarning('Echec d\'upload', true);
-                }
-
+                vm.set('imagescount', imgsArr.length);
                 
-            };
 
-            xhr.open("POST", "http://api-sse.193b.starter-ca-central-1.openshiftapps.com/upload", true);
-            xhr.send(formData);
+                record.set('images', imgsArr);
+
+                me.saveChanges('Image');
+
+
+            }, function(error) {
+                navigator.notification.activityStop();
+                alert("An error has occurred: Code = " +  error.code);
+            }, options);
 
          }
         
@@ -269,15 +320,7 @@ Ext.define('App.view.product.ShowController', {
         rec.save({
             callback: function(result, operation) {    
                 if (operation.hasException()) {
-                    
-                    if (Ext.isObject(formErrors)) {
-                        var errNames = Object.keys(formErrors),
-                            fieldName = errNames[0],
-                            msg = fieldName + ' : ' + formErrors[fieldName];
-
-                        App.ux.Signals.showWarning(msg, true);
-                    }
-
+                    App.ux.Signals.showWarning("Modification non enregistrée !", true);
                     return;
                 }
 

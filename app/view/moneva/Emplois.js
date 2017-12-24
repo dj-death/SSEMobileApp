@@ -1,6 +1,15 @@
 Ext.define('App.view.moneva.Emplois', {
-    extend: 'Ext.Container',
+    extend: 'Ext.Panel',
     xtype: 'emploischecklist',
+
+    requires: [
+        'Ext.panel.Collapser'
+    ],
+
+    collapsible: {
+        direction: 'top',
+        dynamic: true
+    },
 
     defaults: {
         labelAlign: 'left',

@@ -101,7 +101,7 @@ Ext.define('App.view.main.MainController', {
         }
 
         // not permitted
-        if (!entry || entry.get('role') < role) {
+        if (entry && entry.get('role') < role) {
             action.stop(true);
 
             this.activate(

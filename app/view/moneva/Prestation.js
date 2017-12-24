@@ -1,6 +1,15 @@
 Ext.define('App.view.moneva.Prestation', {
-    extend: 'Ext.Container',
+    extend: 'Ext.Panel',
     xtype: 'prestationchecklist',
+
+    requires: [
+        'Ext.panel.Collapser'
+    ],
+
+    collapsible: {
+        direction: 'top',
+        dynamic: true
+    },
 
     defaults: {
         labelAlign : 'left',

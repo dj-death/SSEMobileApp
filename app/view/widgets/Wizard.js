@@ -1,6 +1,11 @@
 Ext.define('App.view.widgets.Wizard', {
     extend: 'Ext.form.Panel',
 
+    requires: [
+        'Ext.tab.Panel',
+        'Ext.layout.overflow.Scroller'
+    ],
+
     controller: {
         type: 'wizard'
     },
@@ -126,7 +131,7 @@ Ext.define('App.view.widgets.Wizard', {
     height: 512,
     width: 300,
 
-    bodyPadding: 20,
+    bodyPadding: '10 8',
     scrollable: 'y',
 
     items: [{
@@ -135,9 +140,10 @@ Ext.define('App.view.widgets.Wizard', {
 
         defaults: {
             userCls: 'wizard-screen',
-            scrollable: 'y',
-            padding: 15,
+            scrollable: true,
+            padding: 2,
             tab: {
+                minWidth: 100,
                 iconAlign: 'top'
             }
         },
@@ -145,8 +151,10 @@ Ext.define('App.view.widgets.Wizard', {
         tabBar: {
             defaultTabUI: 'flat',
             ui: 'flat',
+
             layout: {
-                pack: 'center'
+                pack: 'start',
+                overflow: 'scroller'
             }
         },
 

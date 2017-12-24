@@ -6,28 +6,41 @@ Ext.define('App.view.project.ShowHeader', {
     weighted: true,
 
     layout: {
-        type: 'hbox',
-        align: 'end'
+        type: 'vbox',
+        align: 'stretch'
     },
 
     items: {
-        //edit: null,
-        //remove: null,
-
-        geolocate: {
-            xtype: 'button',
-            iconCls: 'x-fa fa-map-marker',
-            handler: 'onGeoLocateTap',
-            weight: 10,
-            ui: 'flat'
+        title: {
+            xtype: 'component',
+            userCls: 'header-title',
+            flex: 1,
+            bind: {
+                record: '{record}'
+            }
         },
 
-        takePicture: {
-            xtype: 'button',
-            iconCls: 'x-fa fa-camera',
-            handler: 'takePicture',
-            weight: 11,
-            ui: 'flat'
+        tools: {
+            layout: {
+                type: 'hbox',
+                align: 'stretchmax',
+                pack: 'end'
+            },
+
+            items: [{
+                xtype: 'button',
+                iconCls: 'x-fa fa-map-marker',
+                handler: 'onGeoLocateTap',
+                weight: 10,
+                ui: 'flat'
+            }, {
+                xtype: 'button',
+                iconCls: 'x-fa fa-camera',
+                handler: 'takePicture',
+                weight: 11,
+                ui: 'flat'
+            }]
+
         }
     }
 });

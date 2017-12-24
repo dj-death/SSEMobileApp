@@ -15,10 +15,10 @@ Ext.define('App.view.widgets.MapView', {
 
     // https://developers.google.com/maps/documentation/javascript/reference#MapOptions
     mapOptions: {
-        disableDoubleClickZoom: true,
-        disableDefaultUI: true,
+        disableDoubleClickZoom: false,
+        disableDefaultUI: false,
         scrollwheel: false,
-        zoom: 8,
+        zoom: 16,
 
         styles: [{
             featureType: "all",

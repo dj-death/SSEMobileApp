@@ -7,6 +7,8 @@ Ext.define('App.view.project.ShowModel', {
     },
 
     stores: {
+        markers: {},
+        
         images: {
             fields: ['id', 'src', 'title'],
             data: []

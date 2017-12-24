@@ -331,7 +331,7 @@ Ext.define('App.model.Visit', {
         },
 
         { name: 'problemes_projet', type: 'string' },
-        { name: 'problemes_porteur', type: 'string' },
+        { name: 'problemes_porteur', type: 'string' }/*,
 
         
         {	name: 'tx_pertinence', 
@@ -462,7 +462,7 @@ Ext.define('App.model.Visit', {
         
         {	name: 'pertinence_q11_valeurs_cibles', 
             type: 'auto'
-        }
+        }*/
 
     ],
 

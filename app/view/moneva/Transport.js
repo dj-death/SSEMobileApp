@@ -1,6 +1,16 @@
 Ext.define('App.view.moneva.Transport', {
-    extend: 'Ext.Container',
+    extend: 'Ext.Panel',
     xtype: 'transportchecklist',
+
+    requires: [
+        'Ext.panel.Collapser'
+    ],
+
+    collapsible: {
+        direction: 'top',
+        dynamic: true
+    },
+    
 
     defaults: {
         xtype: 'checkbox',

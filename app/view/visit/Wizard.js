@@ -56,8 +56,12 @@ Ext.define('App.view.visit.Wizard', {
         }, {
             xtype: 'combobox',
             label: 'Responsable',
-            displayField: 'label',
-            valueField: 'value',
+            displayField: 'lastname',
+            valueField: 'id',
+
+            /*displayField: 'label',
+            valueField: 'value',*/
+
             queryMode: 'local',
             required: true,
             bind: {
@@ -67,10 +71,13 @@ Ext.define('App.view.visit.Wizard', {
 
         }, {
             xtype: 'combobox',
-            reference: 'missionCombo',
             label: 'Mission',
-            displayField: 'label',
-            valueField: 'value',
+
+            displayField: 'name',
+            valueField: 'id',
+
+            /*displayField: 'label',
+            valueField: 'value',*/
             queryMode: 'local',
             required: true,
             bind: {
@@ -100,7 +107,7 @@ Ext.define('App.view.visit.Wizard', {
             xtype: 'moneva'
         }]
 
-    }, {
+    }/*, {
         title: 'Risques avérés',
         iconCls: 'x-fa fa-warning',
 
@@ -114,7 +121,7 @@ Ext.define('App.view.visit.Wizard', {
             xtype: 'riskslist'
         }]
 
-    }, {
+    }*/, {
         title: 'Conclusions',
         iconCls: 'x-fa fa-info',
 

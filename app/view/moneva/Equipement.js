@@ -1,6 +1,15 @@
 Ext.define('App.view.moneva.Equipement', {
-    extend: 'Ext.Container',
+    extend: 'Ext.Panel',
     xtype: 'equipementchecklist',
+
+    requires: [
+        'Ext.panel.Collapser'
+    ],
+
+    collapsible: {
+        direction: 'top',
+        dynamic: true
+    },
 
     defaults: {
         labelAlign: 'left',

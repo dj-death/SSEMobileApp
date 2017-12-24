@@ -34,7 +34,7 @@ Ext.define('App.view.phone.product.BrowseToolbar', {
                 text: '',
                 width: 50,
                 maxWidth: 50,
-                margin: '6 4'
+                margin: '2 4'
             }, {
                 xtype: 'searchfield',
                 reference: 'search',
@@ -44,7 +44,7 @@ Ext.define('App.view.phone.product.BrowseToolbar', {
                 bind: '{filters.search}',
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }]
 
         },
@@ -67,7 +67,7 @@ Ext.define('App.view.phone.product.BrowseToolbar', {
                 },
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }, {
                 xtype: 'combobox',
                 valueField: 'value',
@@ -80,7 +80,7 @@ Ext.define('App.view.phone.product.BrowseToolbar', {
                 },
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }]
         },
 
@@ -102,7 +102,7 @@ Ext.define('App.view.phone.product.BrowseToolbar', {
                 },
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }, {
                 xtype: 'combobox',
                 valueField: 'value',
@@ -115,7 +115,7 @@ Ext.define('App.view.phone.product.BrowseToolbar', {
                 },
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }]
         },
 
@@ -173,7 +173,7 @@ Ext.define('App.view.phone.product.BrowseToolbar', {
                 },
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }, {
                 xtype: 'button',
                 ui: 'action',
@@ -182,7 +182,7 @@ Ext.define('App.view.phone.product.BrowseToolbar', {
                 tooltip: 'Actualiser',
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }, {
                 xtype: 'button',
                 ui: 'action',
@@ -191,7 +191,7 @@ Ext.define('App.view.phone.product.BrowseToolbar', {
                 tooltip: 'Annuler Filtres',
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }]
 
         }

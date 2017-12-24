@@ -1,6 +1,16 @@
 Ext.define('App.view.moneva.Satisfaction', {
-    extend: 'Ext.Container',
+    extend: 'Ext.Panel',
     xtype: 'satisfactionchecklist',
+
+    requires: [
+        'Ext.panel.Collapser'
+    ],
+
+    collapsible: {
+        direction: 'top',
+        dynamic: true
+    },
+    
 
     defaults: {
         labelAlign : 'left',

@@ -215,12 +215,49 @@ Ext.define('App.view.widgets.BrowseController', {
     },
 
     _startRec: function () {
-
         var speechRecognition = window.plugins && window.plugins.speechRecognition;
 		
         if (!speechRecognition) {
             return;
         }
+
+        var artyom = new Artyom();
+
+        artyom.addCommands([
+            {
+                // a Smart command allow you to use wildcard in order to retrieve words that the user should say
+                smart: true, 
+
+                // Ways to trigger the command with the voice
+                indexes:["Do you know who is *","I don't know who is *","Is * a good person"],
+
+                action: function (i,wildcard) {
+                    var database = ["Carlos","Bruce","David","Joseph","Kenny"];
+        
+                    //If the command "is xxx a good person" is triggered do, else
+                    if(i == 2){
+                        if(database.indexOf(wildcard.trim())){
+                            artyom.say("I'm a machine, I dont know what is a feeling");
+                        }else{
+                            artyom.say("I don't know who is " + wildcard + " and i cannot say if is a good person");
+                        }
+                    } else{
+                        if(database.indexOf(wildcard.trim())){
+                            artyom.say("Of course i know who is "+ wildcard + ". A really good person");
+                        }else{
+                            artyom.say("My database is not big enough, I don't know who is " + wildcard);
+                        }
+                    }
+                }
+            },
+            {
+                indexes: ["Translate * in Spanish"],
+                smart: true,
+                action: function(i, wildcard){
+                    alert("I cannot translate" + wildcard);
+                }
+            },
+        ]);
 
         function showMsgBox (msg) {
             //navigator.notification.beep(2);
@@ -242,6 +279,14 @@ Ext.define('App.view.widgets.BrowseController', {
            
 
             window.plugins.speechRecognition.startListening(function(result){
+                // The hello command should be triggered
+                result.forEach(function(option){
+                    if (artyom.simulateInstruction(option)){
+                        console.log("Matched : " + option, result);
+                        return;
+                    }
+                });
+
                 // Show results in the console
                 var transcript = result[0].toLowerCase().trim();
 

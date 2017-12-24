@@ -1,36 +1,24 @@
 Ext.define('App.view.moneva.Main', {
-    extend: 'Ext.tab.Panel',
+    extend: 'Ext.Panel',
     xtype: 'moneva',
 
-
-    ui: 'navigation',
-
-    tabBarHeaderPosition: 1,
-    titleRotation: 0,
-    tabRotation: 0,
-
-    activeTab: 0,
-
-
-    tabBar: {
-        docked: 'left',
-        flex: 1,
-        scrollable: 'y',
-
-        /*defaultTabUI: 'flat',
-        ui: 'flat',*/
-
-        layout: {
-            align: 'stretch'/*,
-            overflowHandler: 'none'*/
-        }
-    },
-
     defaults: {
-        userCls: 'wizard-screen',
-        scrollable: 'y',
-        padding: '15 10'
+        frame: true,
+        bodyPadding: 4,
+        margin: '4 0',
+        shadow: 'true',
+        ui: 'dark'
     },
+
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+
+    scrollable: {
+        y: 'scroll'
+    },
+
 
     items: [
         {

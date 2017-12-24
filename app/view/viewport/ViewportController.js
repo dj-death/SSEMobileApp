@@ -4,7 +4,8 @@ Ext.define('App.view.viewport.ViewportController', {
 
     mixins: [ 'Ext.mixin.Mashup' ],
 
-    requiredScripts: [ 'http://api-sse.193b.starter-ca-central-1.openshiftapps.com/api/' ],
+    requiredScripts: [ 'http://rest-taqyem.1d35.starter-us-east-1.openshiftapps.com/api/' ],
+    //requiredScripts: [ 'http://192.168.1.4/api/' ],
 
     listen: {
         controller: {

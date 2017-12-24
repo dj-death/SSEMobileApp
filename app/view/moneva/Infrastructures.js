@@ -1,6 +1,15 @@
 Ext.define('App.view.moneva.Infrastructures', {
-    extend: 'Ext.Container',
+    extend: 'Ext.Panel',
     xtype: 'infrastructureschecklist',
+
+    requires: [
+        'Ext.panel.Collapser'
+    ],
+
+    collapsible: {
+        direction: 'top',
+        dynamic: true
+    },
 
     defaults: {
         labelTextAlign: 'left'

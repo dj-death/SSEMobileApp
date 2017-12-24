@@ -1,0 +1,96 @@
+Ext.define('App.view.moneva.Main', {
+    extend: 'Ext.tab.Panel',
+    xtype: 'moneva',
+
+    requires: [
+        'Ext.layout.overflow.Scroller'
+    ],
+
+
+
+    ui: 'navigation',
+
+    tabBarHeaderPosition: 1,
+    titleRotation: 0,
+    tabRotation: 0,
+
+    activeTab: 0,
+
+    defaults: {
+        userCls: 'wizard-screen',
+        scrollable: true,
+        padding: 2,
+        tab: {
+            minWidth: 100,
+            iconAlign: 'top'
+        }
+    },
+
+    tabBar: {
+        docked: 'left',
+        flex: 1,
+
+        layout: {
+            pack: 'start',
+            overflow: 'scroller'
+        }
+    },
+
+    items: [
+        {
+            title: 'Respect de la Convention',
+            xtype: 'conventionchecklist'
+        },
+        {
+            title: 'Sélection du projet',
+            xtype: 'choixchecklist'
+        },
+        {
+            title: 'Bénéficiaires',
+            xtype: 'benefschecklist'
+        },
+        {
+            title: "Création d'emplois",
+            xtype: 'emploischecklist',
+            reference: 'emploischecklist'
+        },
+        {
+            title: 'Centres',
+            xtype: 'centreschecklist',
+            reference: 'centreschecklist'
+        },
+        {
+            title: 'Infrastructures',
+            xtype: 'infrastructureschecklist',
+            reference: 'infrastructureschecklist'
+        },
+        {
+            title: 'Transport',
+            xtype: 'transportchecklist',
+            reference: 'transportchecklist'
+        },
+        {
+            title: 'Equipements et Matériels',
+            xtype: 'equipementchecklist',
+            reference: 'equipementchecklist'
+        },
+        {
+            title: 'Prestation',
+            xtype: 'prestationchecklist',
+            reference: 'prestationchecklist'
+        },
+        {
+            title: 'AGR',
+            xtype: 'agrchecklist',
+            reference: 'agrchecklist'
+        },
+        {
+            title: 'Satisfaction',
+            xtype: 'satisfactionchecklist'
+        },
+        {
+            title: 'Projet en difficulté',
+            xtype: 'problemeschecklist'
+        }
+    ]
+});

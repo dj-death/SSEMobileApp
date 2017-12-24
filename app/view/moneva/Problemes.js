@@ -1,6 +1,15 @@
 Ext.define('App.view.moneva.Problemes', {
-    extend: 'Ext.Container',
+    extend: 'Ext.Panel',
     xtype: 'problemeschecklist',
+
+    requires: [
+        'Ext.panel.Collapser'
+    ],
+
+    collapsible: {
+        direction: 'top',
+        dynamic: true
+    },
 
     defaults: {
         labelAlign: 'left',

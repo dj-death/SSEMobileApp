@@ -6,8 +6,8 @@ Ext.define('App.view.product.ShowHeader', {
     weighted: true,
 
     layout: {
-        type: 'hbox',
-        align: 'end'
+        type: 'vbox',
+        align: 'stretch'
     },
 
     items: {
@@ -20,69 +20,38 @@ Ext.define('App.view.product.ShowHeader', {
             }
         },
 
-        geolocate: {
-            xtype: 'button',
-            iconCls: 'x-fa fa-map-marker',
-            handler: 'onGeoLocateTap',
-            weight: 10,
-            ui: 'flat'
-        },
-
-        takePicture: {
-            xtype: 'button',
-            iconCls: 'x-fa fa-camera',
-            handler: 'takePicture',
-            weight: 11,
-            ui: 'flat'
-        },
-
-        visit: {
-            xtype: 'button',
-            iconCls: 'x-fa fa-eye',
-            cls: 'no-print',
-            handler: 'onVisitTap',
-            text: '+ Visiter',
-            weight: 9,
-            ui: 'flat',
-
-            platformConfig: {
-                phone: {
-                    hidden: true
+        tools: {
+            layout: {
+                type: 'hbox',
+                align: 'stretchmax',
+                pack: 'end'
+            },
+        
+            items: [
+                {
+                    xtype: 'button',
+                    iconCls: 'x-fa fa-map-marker',
+                    handler: 'onGeoLocateTap',
+                    weight: 10,
+                    ui: 'flat'
+                },
+        
+                {
+                    xtype: 'button',
+                    iconCls: 'x-fa fa-camera',
+                    handler: 'takePicture',
+                    weight: 11,
+                    ui: 'flat'
+                },
+        
+                {
+                    xtype: 'button',
+                    iconCls: 'x-fa fa-eye',
+                    handler: 'onVisitTap',
+                    weight: 12,
+                    ui: 'flat'
                 }
-            }
-        },
-
-
-        edit: {
-            xtype: 'button',
-            iconCls: 'x-fa fa-pencil',
-            cls: 'no-print',
-            handler: 'onEditTap',
-            text: 'Modifier',
-            weight: 10,
-            ui: 'flat',
-
-            platformConfig: {
-                phone: {
-                    hidden: true
-                }
-            }
-        },
-
-        remove: {
-            xtype: 'button',
-            iconCls: 'x-fa fa-remove',
-            cls: 'no-print',
-            handler: 'onDeleteTap',
-            text: 'Supprimer',
-            weight: 20,
-            ui: 'flat',
-
-            platformConfig: {
-                phone: {
-                    hidden: true
-                }
-            }
+            ]
         }
     }
 });

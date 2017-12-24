@@ -12,12 +12,12 @@ Ext.define('App.view.visit.ShowModel', {
             pageSize: 12
         },
 
-        risks: {
+        /*risks: {
             fields: ['id', 'name', 'url'],
             data: []
-        },
+        },*/
 
-        products: {
+        /*products: {
             type: 'products',
             pageSize: 0,
             autoLoad: true,
@@ -38,6 +38,6 @@ Ext.define('App.view.visit.ShowModel', {
                     return record.get('urgency');
                 }
             }
-        }
+        }*/
     }
 });

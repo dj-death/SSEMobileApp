@@ -24,6 +24,15 @@ Ext.define('App.view.project.Show', {
             }
         },
 
+        map: {
+            xtype: 'mapview',
+            userCls: 'office-map',
+            weight: -5,
+            bind: {
+                markers: '{markers}'
+            }
+        },
+
         content: {
             items: {
                 left: {

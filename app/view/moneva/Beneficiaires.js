@@ -1,6 +1,15 @@
 Ext.define('App.view.moneva.Beneficiaires', {
-    extend: 'Ext.Container',
+    extend: 'Ext.Panel',
     xtype: 'benefschecklist',
+
+    requires: [
+        'Ext.panel.Collapser'
+    ],
+
+    collapsible: {
+        direction: 'top',
+        dynamic: true
+    },
 
     defaults: {
         labelTextAlign: 'left'

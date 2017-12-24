@@ -28,11 +28,11 @@ Ext.define('App.view.visit.Show', {
                     items: {
                         details: {
                             xtype: 'visitshowdetails'
-                        }/*,
+                        },
 
                         conclusions: {
                             xtype: 'visitshowconclusions'
-                        },
+                        }/*,
 
                         risks: {
                             xtype: 'visitshowrisks'

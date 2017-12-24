@@ -3,7 +3,7 @@ Ext.define('App.view.phone.main.MainController', {
     alias: 'controller.phone-main',
 
     getContainerForViewId: function(id) {
-        var regex = /^(person|office|organization)(create|edit|show)$/;
+        var regex = /^(person|project|product|partner|visit|risk|mission)(show|create|edit)$/;
         return this.lookup(id.match(regex)? 'navigation' : 'views');
     }
 });

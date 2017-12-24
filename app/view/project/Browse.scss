@@ -80,47 +80,47 @@
 
     .intitule-cell {
 
-        .non-demarre a {
+        .non-demarre {
             color: #AE0000 !important;
             text-decoration: underline !important;
         }
-        .etude a {
+        .etude {
             color: #00ACF2 !important;
             text-decoration: underline !important;
         }
 
-        .lancement a {
+        .lancement {
             color: #00ACF2 !important;
         }
 
-        .execution a {
+        .execution {
             color: #004E6E !important;
         }
 
-        .retard a {
+        .retard {
             color: #FBA400 !important;
             text-decoration: underline !important;
         }
 
-        .acheve a {
+        .acheve {
             color: #FBA400 !important;
         }
 
         .operationnel {
-            color: #0d1114 !important;
+            color: #428c8A !important;
         }
 
-        .difficulte a {
+        .difficulte {
             color: #FB4B00 !important;
         }
 
-        .arret a {
+        .arret {
             color: #AE0000 !important;
             text-decoration: underline !important;
         }
 
 
-        .annule a, .resilie a {
+        .annule , .resilie {
             color: #444 !important;
             text-decoration: line-through !important;
         }

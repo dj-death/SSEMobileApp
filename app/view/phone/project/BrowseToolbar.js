@@ -34,7 +34,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 text: '',
                 width: 50,
                 maxWidth: 50,
-                margin: '6 4'
+                margin: '2 4'
             }, {
                 xtype: 'searchfield',
                 reference: 'search',
@@ -44,7 +44,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 bind: '{filters.search}',
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }]
 
         },
@@ -67,7 +67,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 },
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }, {
                 xtype: 'combobox',
                 valueField: 'value',
@@ -80,7 +80,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 },
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }]
         },
 
@@ -101,7 +101,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 },
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }, {
                 xtype: 'combobox',
                 valueField: 'value',
@@ -114,7 +114,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 },
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }]
         },
 
@@ -136,7 +136,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 },
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }, {
                 xtype: 'combobox',
                 valueField: 'value',
@@ -149,7 +149,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 },
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }]
         },
 
@@ -174,7 +174,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 },
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }, {
                 xtype: 'selectfield',
                 placeholder: 'AGR & Autres',
@@ -191,7 +191,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 },
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }]
         },
 
@@ -221,7 +221,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 xtype: 'checkbox',
                 boxLabel: 'Inclure Sous-Projets',
                 flex: 1,
-                margin: '6 4',
+                margin: '2 4',
                 checked: false,
 
                 bind: {
@@ -231,7 +231,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 xtype: 'checkbox',
                 boxLabel: 'Inclure Annulés',
                 flex: 1,
-                margin: '6 4',
+                margin: '2 4',
                 checked: false,
 
                 bind: {
@@ -256,7 +256,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 },
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }, {
                 xtype: 'button',
                 ui: 'action',
@@ -265,7 +265,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 tooltip: 'Actualiser',
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }, {
                 xtype: 'button',
                 ui: 'action',
@@ -274,7 +274,7 @@ Ext.define('App.view.phone.project.BrowseToolbar', {
                 tooltip: 'Annuler Filtres',
 
                 flex: 1,
-                margin: '6 4'
+                margin: '2 4'
             }]
 
         }

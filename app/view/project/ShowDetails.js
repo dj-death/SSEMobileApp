@@ -110,6 +110,13 @@ Ext.define('App.view.project.ShowDetails', {
             '</div>',
 
             '<div class="item">',
+                '<div class="label">Maitre d\'ouvrage</div>',
+                '<div class="value">{MOA}</div>',
+                '<div class="extra">{MOA_delegue}</div>',
+            '</div>',
+
+
+            '<div class="item">',
                 '<div class="label">Délai d\'exécution prévu</div>',
                 '<div class="value">{duree_projet}</div>',
             '</div>',

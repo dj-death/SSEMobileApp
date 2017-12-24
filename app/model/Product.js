@@ -7,8 +7,8 @@ Ext.define('App.model.Product', {
         { name: 'quartier_douar', type: 'string' },
         { name: 'address', type: 'string' },
         { name: 'location', type: 'auto', defaultValue: {
-            "latitude": 33.89352,
-            "longitude": -5.54727
+            "latitude": null,
+            "longitude": null
         }},
         
         { name: 'director', type: 'string' },

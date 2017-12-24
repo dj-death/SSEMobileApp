@@ -196,33 +196,33 @@ Ext.define('App.view.visit.WizardController', {
         }
 
         if (type !== 'Infrastructure') {
-            emploischecklist.enable();
+            emploischecklist.show();
         } else {
-            emploischecklist.disable();
+            emploischecklist.hide();
         }
 
         if ( has_edifice ) {
-            centreschecklist.enable();
+            centreschecklist.show();
         } else {
-            centreschecklist.disable();
+            centreschecklist.hide();
             foncierChkbox.hide();
         }
 
         if ( type === 'Transport') {
-            transportchecklist.enable();
+            transportchecklist.show();
         } else {
-            transportchecklist.disable();
+            transportchecklist.hide();
         }
 
         if (type === 'Infrastructure') {
-            infrastructureschecklist.enable();
+            infrastructureschecklist.show();
         } else {
-            infrastructureschecklist.disable();
+            infrastructureschecklist.hide();
         }
 
         if (type === 'AGR') {
-            agrchecklist.enable();
-            prestationchecklist.disable();
+            agrchecklist.show();
+            prestationchecklist.hide();
 
             accompagnementChkBox.show();
             BPChkBox.show();
@@ -230,8 +230,8 @@ Ext.define('App.view.visit.WizardController', {
             foncierChkbox.hide();
 
         } else {
-            agrchecklist.disable();
-            prestationchecklist.enable();
+            agrchecklist.hide();
+            prestationchecklist.show();
 
             accompagnementChkBox.hide();
             BPChkBox.hide();
@@ -240,9 +240,9 @@ Ext.define('App.view.visit.WizardController', {
         }
 
         if (has_edifice || type === 'Autre') {
-            equipementchecklist.enable();
+            equipementchecklist.show();
         } else {
-            equipementchecklist.disable();
+            equipementchecklist.hide();
         }
 
 
@@ -359,17 +359,17 @@ Ext.define('App.view.visit.WizardController', {
     },
 
 
-    onRisksLoad: function () {
+    /*onRisksLoad: function () {
         this.setRisksLoaded(true);
-    },
+    },*/
 
     onShow: function() {
         var me = this,
             vm = this.getViewModel(),
             record = vm.get('record'),
             
-            visitRisks = vm.getStore('visitRisks'),
-            recommandations = App.app.getRecommandationsStore(),
+            //visitRisks = vm.getStore('visitRisks'),
+            recommandations = App.app.getRecommandationsStore()/*,
 
             fetchRisks = function() {
                 var selections = record.get('risks_list'),
@@ -403,9 +403,9 @@ Ext.define('App.view.visit.WizardController', {
                     App.ux.Signals.showWarning(errorMsg, true);
                 }
 
-            };
+            }*/;
 
-        visitRisks.removeAll();
+        //visitRisks.removeAll();
     
         if (record.isPhantom()) {
             recommandations.removeAll();
@@ -422,11 +422,11 @@ Ext.define('App.view.visit.WizardController', {
         } else {
             recommandations.filter('visit_id', record.get('id'));
 
-            if (this.getRisksLoaded()) {
+            /*if (this.getRisksLoaded()) {
                 fetchRisks();
             } else  {
                 setTimeout(fetchRisks, 250);
-            }
+            }*/
 
         }
 
@@ -435,7 +435,7 @@ Ext.define('App.view.visit.WizardController', {
         this.callParent(arguments);
     },
 
-    onRemoveRisk: function (grid, context) {
+    /*onRemoveRisk: function (grid, context) {
         var me = this,
             record = context.record;
 
@@ -467,7 +467,7 @@ Ext.define('App.view.visit.WizardController', {
             });
 
         myWindow.show();
-    },
+    },*/
 
 
     onRisksWizardActivate: function () {
@@ -500,7 +500,7 @@ Ext.define('App.view.visit.WizardController', {
         });*/
     },
 
-    makeList: function (records) {
+    /*makeList: function (records) {
         var list;
 
         if (records.length) {
@@ -512,7 +512,7 @@ Ext.define('App.view.visit.WizardController', {
         }
 
         return list;
-    },
+    },*/
 
     onRecommandationEdit: function(dataview, location) {
         var record = location.record;
@@ -591,11 +591,11 @@ Ext.define('App.view.visit.WizardController', {
         }).show();
     },
 
-    onCheckChange: function (col, rowIndex, checked, record, e, eOpts ) {
+    /*onCheckChange: function (col, rowIndex, checked, record, e, eOpts ) {
         var tree = this.lookup('risksCheckTree');
 
         checkPropagate(record, checked);
-    },
+    },*/
 
     finalize: function (result) {
         var me = this,
@@ -643,7 +643,7 @@ Ext.define('App.view.visit.WizardController', {
         var me = this,
             vm = me.getViewModel(),
             record = vm.get('record'),
-            visitRisks = vm.getStore('visitRisks'),
+            //visitRisks = vm.getStore('visitRisks'),
             list = [],
             selections = [],
 
@@ -668,15 +668,18 @@ Ext.define('App.view.visit.WizardController', {
         }
 
         record.set('meta', meta);
+        record.set('risks_list', []);
 
-        visitRisks.each(function (risk) {
+        this.callParent(arguments);
+
+        /*visitRisks.each(function (risk) {
             selections.push(risk.getId());
             list.push(risk.get('name'));
         });
        
-        list = this.makeList(list);
+        list = this.makeList(list);*/
 
-        App.ux.Signals.askUserPermission(list, function (buttonId) {
+       /* App.ux.Signals.askUserPermission(list, function (buttonId) {
             if (buttonId !== "yes") {
                 return false;
             }
@@ -685,7 +688,7 @@ Ext.define('App.view.visit.WizardController', {
             //record.set('startDate', record.get('startDate'));
 
             App.view.visit.WizardController.superclass.onSubmitTap.apply(me);
-        });
+        });*/
 
     },
 

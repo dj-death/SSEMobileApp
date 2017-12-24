@@ -4,8 +4,8 @@ Ext.define('App.override.field.Field', {
     config: {
         requiredMessage: 'This field is required',
 
-        labelTextAlign: 'right',
-        labelWidth: 200,
+        labelTextAlign: 'left',
+        labelWidth: 120,
 
         errorTip: {
             anchor: true,

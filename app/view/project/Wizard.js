@@ -61,19 +61,6 @@ Ext.define('App.view.project.Wizard', {
 
         }, {
             xtype: 'combobox',
-            reference: 'rubrique',
-            label: 'Rubrique',
-            displayField: 'value',
-            valueField: 'value',
-            queryMode: 'local',
-            required: true,
-            
-            bind: {
-                value: '{record.rubrique}',
-                store: '{rubriques}'
-            }
-        }, {
-            xtype: 'combobox',
             reference: 'secteur_activite_principal',
             label: 'Secteur d\'activité principal',
             displayField: 'value',
@@ -167,31 +154,6 @@ Ext.define('App.view.project.Wizard', {
             bind: {
                 value: '{record.porteur_ajuste}',
                 store: '{partners}'
-            }
-        }, {            
-            xtype: 'combobox',
-            reference: 'classe_porteur',
-            label: 'Classe',
-            displayField: 'label',
-            valueField: 'value',
-            queryMode: 'local',
-
-            bind: {
-                value: '{record.classe_porteur}',
-                store: '{classesporteur}'
-            }
-
-        }, {
-            xtype: 'combobox',
-            reference: 'type_porteur',
-            label: 'Type',
-            displayField: 'label',
-            valueField: 'value',
-            queryMode: 'local',
-
-            bind: {
-                value: '{record.type_porteur}',
-                store: '{typesporteur}'
             }
         }]
     }, {

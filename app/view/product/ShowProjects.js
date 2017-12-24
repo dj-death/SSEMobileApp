@@ -26,7 +26,7 @@ Ext.define('App.view.product.ShowProjects', {
         cls: 'office-details',
         minHeight: 80,
 
-        itemTpl: '<b style="color: #2f9ba0;">{intitule} :</b><br/>{objectifs}',
+        itemTpl: '<b style="color: #2f9ba0;">{intitule} :</b><br/>{consistance}',
         grouped: true,
         pinHeaders: true,
 

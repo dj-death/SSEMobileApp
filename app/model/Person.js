@@ -25,7 +25,7 @@ Ext.define('App.model.Person', {
         { name: 'phone', type: 'string' },
         { name: 'title', type: 'string' },
         { name: 'programme', type: 'string' },
-        { name: 'picture', type: 'string', defaultValue: '/api/portraits/user.png'},
+        { name: 'picture', type: 'string', defaultValue: '/resources/images/user.png'},
         { name: 'role', type: 'int' }, // 0: admin, 1: SSE, 2: DAS, 3: Guest
 
         // Calculated fields

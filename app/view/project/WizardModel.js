@@ -59,27 +59,6 @@ Ext.define('App.view.project.WizardModel', {
         programmes: {
             type: 'programmes',
             autoLoad: true
-        },
-
-        rubriques: {
-            type: 'rubriques',
-            autoLoad: true
-        },
-
-        classesporteur: {
-            type: 'filters',
-            service: 'projects',
-            autoLoad: true,
-            field: 'project.classe_porteur',
-            label: 'project.classe_porteur'
-        },
-
-        typesporteur: {
-            type: 'filters',
-            service: 'projects',
-            autoLoad: true,
-            field: 'project.type_porteur',
-            label: 'project.type_porteur'
         }
     }
 });
